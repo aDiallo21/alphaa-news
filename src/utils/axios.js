@@ -6,7 +6,6 @@ const apiURL = axios.create({
 
 export const getArticles = () => {
   return apiURL.get("/articles").then(({ data }) => {
-    // console.log(data.articles);
     return data.articles;
   });
 };
