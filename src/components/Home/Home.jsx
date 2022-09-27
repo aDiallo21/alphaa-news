@@ -3,11 +3,6 @@ import { getArticles } from "../../utils/axios";
 import Articles from "../Articles/Articles";
 
 const Home = () => {
-  return (
-    <div>
-      Hello
-      <button>t</button>
-    </div>
-  );
+  return <div></div>;
 };
 export default Home;
