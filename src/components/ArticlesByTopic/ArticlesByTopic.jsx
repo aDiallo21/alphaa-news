@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleByTopic } from "../utils/axios";
-import ArticleCard from "./ArticleCard/ArticleCard";
+import { getArticleByTopic } from "../../utils/axios";
+import ArticleCard from "../ArticleCard/ArticleCard";
 
 export default function ArticlesByTopic() {
   const [topicSearch, setTopicSearch] = useState([]);
