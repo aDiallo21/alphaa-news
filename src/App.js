@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Articles from "./components/Articles/Articles";
 import Topics from "./components/Topics/Topics";
-import ArticlesByTopic from "./components/ArticlesByTopic";
+import ArticlesByTopic from "./components/ArticlesByTopic/ArticlesByTopic";
 
 function App() {
   return (
