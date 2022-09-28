@@ -5,18 +5,18 @@ import ArticleCard from "./ArticleCard/ArticleCard";
 
 export default function ArticlesByTopic() {
   const [topicSearch, setTopicSearch] = useState([]);
-  const [loading, isLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const { topic_slug } = useParams();
 
   useEffect(() => {
     getArticleByTopic(topic_slug).then((articlesFromApi) => {
       setTopicSearch(articlesFromApi.articles);
-      isLoading(false);
+      setLoading(false);
     });
   }, [topic_slug]);
 
   if (loading) {
-    return <h1>"Loading... please wait"</h1>;
+    return <h1>Loading... please wait</h1>;
   }
   return (
     <div className="articles-by-topic">
