@@ -3,6 +3,12 @@ import { getArticles } from "../../utils/axios";
 import Articles from "../Articles/Articles";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <div>
+      <p className="home-para">
+        Welcome to Alphaa News, home of what's going on around the world{" "}
+      </p>
+    </div>
+  );
 };
 export default Home;
