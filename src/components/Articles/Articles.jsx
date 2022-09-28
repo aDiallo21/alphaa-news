@@ -17,11 +17,13 @@ export default function Articles() {
   return (
     <main>
       <div className="random-article-container">
-        {loading
-          ? "Loading... please wait"
-          : articles.map((article) => (
-              <ArticleCard key={article.article_id} article={article} />
-            ))}
+        {loading ? (
+          <h1>Loading... please wait</h1>
+        ) : (
+          articles.map((article) => (
+            <ArticleCard key={article.article_id} article={article} />
+          ))
+        )}
       </div>
     </main>
   );
