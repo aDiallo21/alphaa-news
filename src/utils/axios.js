@@ -21,3 +21,11 @@ export const getArticleById = (article_id) => {
     return data.article;
   });
 };
+
+export const patchArticleVotes = (article_id) => {
+  return apiURL
+    .patch(`/articles/${article_id}`, { inc_votes: 1 })
+    .then(({ data }) => {
+      return data.article;
+    });
+};
