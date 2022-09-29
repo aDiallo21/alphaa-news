@@ -1,10 +1,10 @@
 import "./App.css";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Articles from "./components/Articles/Articles";
-import Topics from "./components/Topics/Topics";
-import ArticlesByTopic from "./components/ArticlesByTopic/ArticlesByTopic";
+import Home from "./components/Home";
+import Articles from "./components/Articles";
+import Topics from "./components/Topics";
+import SingleArticle from "./components/SingleArticle";
 
 function App() {
   return (
@@ -14,8 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/topics/:topic_slug" element={<Articles />} />
           <Route path="/topics" element={<Topics />} />
-          <Route path="/articles/:topic_slug" element={<ArticlesByTopic />} />
+          <Route path="/articles/:article_id" element={<SingleArticle />} />
         </Routes>
       </div>
     </BrowserRouter>
