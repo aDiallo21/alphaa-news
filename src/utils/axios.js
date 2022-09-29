@@ -18,7 +18,6 @@ export const getTopics = () => {
 
 export const getArticleById = (article_id) => {
   return apiURL.get(`/articles/${article_id}`).then(({ data }) => {
-    console.log(data);
-    return data;
+    return data.article;
   });
 };
