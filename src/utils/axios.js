@@ -4,8 +4,8 @@ const apiURL = axios.create({
   baseURL: "https://alphaa-news-example.herokuapp.com/api",
 });
 
-export const getArticles = () => {
-  return apiURL.get("/articles").then(({ data }) => {
+export const getArticles = (topic) => {
+  return apiURL.get("/articles", { params: { topic } }).then(({ data }) => {
     return data.articles;
   });
 };
@@ -15,8 +15,10 @@ export const getTopics = () => {
     return data.topics;
   });
 };
-export const getArticleByTopic = (topic_slug) => {
-  return apiURL.get(`/articles?topic=${topic_slug}`).then(({ data }) => {
+
+export const getArticleById = (article_id) => {
+  return apiURL.get(`/articles/${article_id}`).then(({ data }) => {
+    console.log(data);
     return data;
   });
 };
