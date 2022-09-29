@@ -15,6 +15,7 @@ export default function SingleArticle() {
         setArticle(singleArticle);
       })
       .catch((err) => {
+        console.log(err, "ERROR");
         setError(err);
       });
     setLoading(false);
@@ -24,8 +25,14 @@ export default function SingleArticle() {
     return <h1>"Loading... please wait"</h1>;
   }
 
-  // if (error) {
-  // }
+  if (error) {
+    return (
+      <h1 className="error-404">
+        {" "}
+        {`Error ${error.response.request.status}: Article ${article_id} not found `}
+      </h1>
+    );
+  }
 
   return (
     <div>
