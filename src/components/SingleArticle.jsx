@@ -7,7 +7,8 @@ export default function SingleArticle() {
   const [article, setArticle] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [votes, setVotes] = useState(null);
+  const [votes, setVotes] = useState(0);
+  const [hasBeenClicked, setHasBeenClicked] = useState(false);
 
   const { article_id } = useParams();
 
@@ -25,10 +26,15 @@ export default function SingleArticle() {
   }, [article_id]);
 
   const handleVote = () => {
-    patchArticleVotes(article_id).then((data) => {
-      setVotes((currentVotes) => currentVotes + 1);
-      return data;
-    });
+    setVotes((currentVotes) => currentVotes + 1);
+    patchArticleVotes(article_id)
+      .then((data) => {
+        setHasBeenClicked(true);
+        return data;
+      })
+      .catch((err) => {
+        setVotes((currentVotes) => currentVotes - 1);
+      });
   };
 
   if (loading) {
@@ -62,6 +68,7 @@ export default function SingleArticle() {
           onClick={() => {
             handleVote();
           }}
+          disabled={hasBeenClicked}
         >
           Vote
         </button>
