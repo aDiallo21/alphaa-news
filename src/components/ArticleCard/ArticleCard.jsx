@@ -5,7 +5,7 @@ function ArticleCard({ article }) {
       <h3> {article.title}</h3>
       <p>
         Topic:
-        <Link className="link" to={`/articles/${article.topic}`}>
+        <Link className="link" to={`/articles/topics/${article.topic}`}>
           {article.topic}
         </Link>
       </p>
