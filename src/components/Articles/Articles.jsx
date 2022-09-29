@@ -16,16 +16,14 @@ export default function Articles() {
   }, [topic_slug]);
 
   return (
-    <main>
-      <div className="random-article-container">
-        {loading ? (
-          <h1>Loading... please wait</h1>
-        ) : (
-          articles.map((article) => (
-            <ArticleCard key={article.article_id} article={article} />
-          ))
-        )}
-      </div>
-    </main>
+    <div>
+      {loading ? (
+        <h1 className="loading">Loading... please wait</h1>
+      ) : (
+        articles.map((article) => (
+          <ArticleCard key={article.article_id} article={article} />
+        ))
+      )}
+    </div>
   );
 }
