@@ -22,7 +22,7 @@ export default function Topics() {
           topics.map((topic) => {
             return (
               <p>
-                <Link className="link" to={`/articles/${topic.slug}`}>
+                <Link className="link" to={`/articles/topics/${topic.slug}`}>
                   <h3>
                     {topic.slug[0].toUpperCase() + topic.slug.substring(1)}
                   </h3>
