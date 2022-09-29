@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getArticles } from "../../utils/axios";
-import ArticleCard from "../ArticleCard/ArticleCard";
+import { getArticles } from "../utils/axios";
+import ArticleCard from "./ArticleCard";
 
 export default function Articles() {
   const { topic_slug } = useParams();

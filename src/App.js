@@ -1,10 +1,10 @@
 import "./App.css";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Articles from "./components/Articles/Articles";
-import Topics from "./components/Topics/Topics";
-import SingleArticle from "./components/SingleArticle/SingleArticle";
+import Home from "./components/Home";
+import Articles from "./components/Articles";
+import Topics from "./components/Topics";
+import SingleArticle from "./components/SingleArticle";
 
 function App() {
   return (

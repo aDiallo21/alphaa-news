@@ -1,4 +1,4 @@
-import { getTopics } from "../../utils/axios";
+import { getTopics } from "../utils/axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
