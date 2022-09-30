@@ -73,7 +73,10 @@ export default function SingleArticle() {
           Vote
         </button>
       </div>
-      <p> Comments: {article.comment_count}</p>
+      <p> Number of comments: {article.comment_count}</p>
+      <Link className="link" to={`/articles/${article_id}/comments`}>
+        <p>Load comments</p>
+      </Link>
     </div>
   );
 }

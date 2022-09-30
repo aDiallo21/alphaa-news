@@ -14,7 +14,10 @@ function ArticleCard({ article }) {
       <p> Author: {article.author}</p>
       <p> Publish date: {article.created_at}</p>
       <p> Votes: {article.votes}</p>
-      <p> Comments: {article.comment_count}</p>
+      <p> Number of comments: {article.comment_count}</p>
+      <Link className="link" to={`/articles/${article.article_id}/comments`}>
+        <p>Load comments</p>
+      </Link>
     </div>
   );
 }
